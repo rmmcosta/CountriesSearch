@@ -1,0 +1,71 @@
+.navmenu {
+    background-color: lightgray;
+}
+
+.navmenu ul{
+    display: flex;
+    list-style: none;
+}
+
+.navmenu ul li {
+    padding: 1rem 2rem;
+}
+
+.navmenu ul li a {
+    color: seagreen;
+}
+
+i {
+    margin-right: .2rem;
+}
+
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20rem;
+    left:45%;
+    position: absolute;
+    text-shadow: 0 1px 0px gray;
+}
+
+.uploadFile {
+    width: 30%;
+}
+
+.uploadFile label, .uploadFile input {
+    margin: 1rem;
+}
+
+input[type="submit"] {
+    background-color: seagreen;
+    color: white;
+    padding: .2rem;
+    border-radius: .1rem;
+    float: right;
+}
+
+.search {
+    width: 30%;
+}
+
+.search input[type="submit"] {
+    float: none;
+}
+
+table {
+    background-color: lemonchiffon;
+}
+
+table th {
+    background-color: darkkhaki;
+    padding: 1rem;
+    color: darkslategray;
+}
+
+.pagination {
+    margin-top: 1rem;
+}
+
+.pagination a {
+    padding: .1rem .5rem;
+    color: seagreen;
+}
