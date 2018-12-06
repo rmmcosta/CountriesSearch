@@ -6,7 +6,7 @@
 
     $page = (isset($_GET['page']) ? $_GET['page'] : 1);
     $search = (isset($_GET['search']) ? $_GET['search'] : '');
-    $total = (isset($_GET['total']) ? $_GET['total'] : countAllCountries($search));
+    $total = (isset($_GET['total']) ? trim($_GET['total']) : countAllCountries($search));
     $linecount = 10;
 ?>
 
@@ -17,9 +17,10 @@
     </form>
 
 <?php
-    $countries = getPaginationCountries($page, $linecount, $search);
+    $sort = (isset($_GET['sort']) ? $_GET['sort'] : 1);
+    $countries = getPaginationCountries($page, $linecount, $search, $sort);
     echo '<label>Total:'.$total.'</label>';
-    echo '<table><tr><th>Country</th><th>Region</th><th>Population</th><th>Area</th><th>Density</th></tr>';
+    echo '<table>'.getHeaderCountries($_SERVER['PHP_SELF'], $search, $sort);
     foreach($countries as $country) {
         echo '<tr><td>'.$country[0].'</td><td>'.$country[1].'</td>
         <td>'.$country[2].'</td><td>'.$country[3].'</td>
